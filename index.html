@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+    background-color: #161616;
+}
+
+.inner_node rect {
+    pointer-events: all;
+}
+
+.inner_node rect.highlight {
+    stroke: #315B7E;
+    stroke-width: 2px;
+}
+
+.outer_node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+    pointer-events: all;
+}
+
+.outer_node circle.highlight
+{
+    stroke: #315B7E;
+    stroke-width: 2px;
+}
+
+.link {
+    fill: none;
+}
+
+#mapid {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+#graphid {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#Home h3 {
+    color: white;
+}
+
+#News {
+    color: #bababa;
+}
+
+</style>
+</head>
+<body>
+
+<div id="Home" class="tabcontent">
+  <h3>Karta Europe s informativnom mrežom</h3>
+</div>
+
+<div id="News" class="tabcontent">
+  <h3>Par zanimljivosti o državi</h3>
+  <p>Primjerice: najpopularnije jelo, glavni grad, najpoznatija osoba, najbolji nogometni klub..</p> 
+  <div id="mapid"></div>
+  <div id="graphid"></div>
+  <script type='text/javascript' src='kod.js'></script>
+</div>
+   
+</body>
+</html> 
+
+
