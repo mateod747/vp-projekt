@@ -1,3 +1,5 @@
+//https://mateod747.github.io/vp-projekt/
+
 var w = 600;
 var h = 450;
 var graph = 400;
@@ -15,7 +17,7 @@ var svg = d3.select("#mapid")
 			.attr("width", w)
       .attr("height", h);
 
-d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {
+d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https://www.toptal.com/javascript/a-map-to-perfection-using-d3-js-to-make-beautiful-web-maps
   var data = topojson.feature(json, json.features);
 	svg.selectAll("path")
 	   .data(json.features)
@@ -119,7 +121,7 @@ var il = data.inner.length;
 
 var inner_y = d3.scale.linear()
     .domain([0, il])
-    .range([-(il * rect_height)/2, (il * rect_height)/2]);
+    .range([-(il * rect_height)/2, (il * rect_height)/2]);          //https://www.d3indepth.com/scales/
 
 mid = (data.outer.length/2.0)
 var outer_x = d3.scale.linear()
