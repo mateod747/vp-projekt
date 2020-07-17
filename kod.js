@@ -27,15 +27,17 @@ d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https:
 	   .attr("stroke", "black")
      .attr("fill", "#FF0000")
      .attr("opacity", .6)
+     .transition().duration(1000)
      .on("mouseover", function(d) {
-        d3.select(this).transition().duration(1000).attr({
+        d3.select(this).attr({
           opacity: 1,
           cursor: "pointer"
         }),
         mouseover(data.inner[d.properties.place]);
        })
+     .transition().duration(1000)
      .on("mouseout", function(d) {
-          d3.select(this).transition().duration(1000).attr({
+          d3.select(this).attr({
               opacity: .6, 
             });   
         mouseout(data.inner[d.properties.place]);
