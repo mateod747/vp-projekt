@@ -28,14 +28,14 @@ d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https:
      .attr("fill", "#FF0000")
      .attr("opacity", .6)
      .on("mouseover", function(d) {
-        d3.select(this).transition().duration(300).attr({
+        d3.select(this).transition().duration(200).attr({
           opacity: 1, 
           cursor: "pointer"
         }),
         mouseover(data.inner[d.properties.place]);
        })
      .on("mouseout", function(d) {
-          d3.select(this).transition().duration(300).attr({
+          d3.select(this).transition().duration(200).attr({
               opacity: .6, 
             });   
         mouseout(data.inner[d.properties.place]);
@@ -45,7 +45,7 @@ d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https:
        .filter(function(D) {
          return D.properties.node;
        })
-       .transition().duration(300).attr("fill", "#808080")  
+       .transition().duration(200).attr("fill", "#808080")  
 
 var data = [["Spain", ["Paella", "Real Madrid C.F.", "FC Barcelona", "Madrid", "Pablo Picasso"]], 
             ["UK", ["Fish and Chips", "Liverpool F.C.", "Man Utd F.C.", "London", "Da Queen"]],
@@ -218,7 +218,7 @@ var inode = svgCircle.append('g').selectAll(".inner_node")
       .filter(function(D) {
         return D.properties.node == letssee;
       })
-      .transition().duration(300).attr("fill", "#b00000")
+      .transition().duration(200).attr("fill", "#000000")
     })
     .on("mouseout", function(d) {
       mouseout(d),
@@ -226,7 +226,7 @@ var inode = svgCircle.append('g').selectAll(".inner_node")
       .filter(function(D) {
         return D.properties.node == letssee;
       })
-      .transition().duration(300).attr("fill", "#FF0000")
+      .transition().duration(200).attr("fill", "#808080")
     });
   
 inode.append('rect')
@@ -253,24 +253,24 @@ function mouseover(d)
 	
     for (var i = 0; i < d.related_nodes.length; i++)
     {
-        d3.select('#' + d.related_nodes[i]).transition().duration(300).attr('stroke', 'red');
-        d3.select('#' + d.related_nodes[i] + '-txt').transition().duration(300).attr("font-weight", 'bold').attr("fill", "white");
+        d3.select('#' + d.related_nodes[i]).transition().duration(200).attr('stroke', 'red');
+        d3.select('#' + d.related_nodes[i] + '-txt').transition().duration(200).attr("font-weight", 'bold').attr("fill", "white");
     }
     
     for (var i = 0; i < d.related_links.length; i++)
-        d3.select('#' + d.related_links[i]).transition().duration(300).attr('stroke-width', '5px');
+        d3.select('#' + d.related_links[i]).transition().duration(200).attr('stroke-width', '5px');
 }
 
 function mouseout(d)
 {   	
     for (var i = 0; i < d.related_nodes.length; i++)
     {
-        d3.select('#' + d.related_nodes[i]).transition().duration(300).attr('stroke', 'none');
-        d3.select('#' + d.related_nodes[i] + '-txt').transition().duration(300).attr("font-weight", 'normal').attr('fill', '#a1a1a1');
+        d3.select('#' + d.related_nodes[i]).transition().duration(200).attr('stroke', 'none');
+        d3.select('#' + d.related_nodes[i] + '-txt').transition().duration(200).attr("font-weight", 'normal').attr('fill', '#a1a1a1');
     }
     
     for (var i = 0; i < d.related_links.length; i++)
-        d3.select('#' + d.related_links[i]).transition().duration(300).attr('stroke-width', link_width);
+        d3.select('#' + d.related_links[i]).transition().duration(200).attr('stroke-width', link_width);
 }
 
 });
