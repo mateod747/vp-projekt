@@ -45,7 +45,7 @@ d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https:
        .filter(function(D) {
          return D.properties.node;
        })
-       .transition().duration(200).attr("fill", "#808080")  
+       .transition().duration(200).attr("fill", "#770000")  
 
 var data = [["Spain", ["Paella", "Real Madrid C.F.", "FC Barcelona", "Madrid", "Pablo Picasso"]], 
             ["UK", ["Fish and Chips", "Liverpool F.C.", "Man Utd F.C.", "London", "Da Queen"]],
@@ -226,7 +226,7 @@ var inode = svgCircle.append('g').selectAll(".inner_node")
       .filter(function(D) {
         return D.properties.node == letssee;
       })
-      .transition().duration(200).attr("fill", "#808080")
+      .transition().duration(200).attr("fill", "#770000")
     });
   
 inode.append('rect')
