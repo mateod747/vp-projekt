@@ -29,7 +29,7 @@ d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https:
      .attr("opacity", .6)
      .on("mouseover", function(d) {
         d3.select(this).attr({
-          changeElementColor(d);,
+          opacity: 1,
           cursor: "pointer"
         }),
         mouseover(data.inner[d.properties.place]);
