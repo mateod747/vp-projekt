@@ -27,21 +27,32 @@ d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https:
 	   .attr("stroke", "black")
      .attr("fill", "#FF0000")
      .attr("opacity", .6)
-     .transition().duration(1000)
      .on("mouseover", function(d) {
         d3.select(this).attr({
-          opacity: 1,
+          changeElementColor(this);,
           cursor: "pointer"
         }),
         mouseover(data.inner[d.properties.place]);
        })
-     .transition().duration(1000)
      .on("mouseout", function(d) {
           d3.select(this).attr({
-              opacity: .6, 
+            changeElementColor1(this);, 
             });   
         mouseout(data.inner[d.properties.place]);
        })  
+
+function changeElementColor(d3Element){
+        d3Element
+        .transition().duration(0)
+          .attr("opacity", 1)
+    }
+
+
+function changeElementColor1(d3Element){
+      d3Element
+      .transition().duration(0)
+        .attr("opacity", .6)
+  }
 
 var data = [["Spain", ["Paella", "Real Madrid C.F.", "FC Barcelona", "Madrid", "Pablo Picasso"]], 
             ["UK", ["Fish and Chips", "Liverpool F.C.", "Man Utd F.C.", "London", "Da Queen"]],
