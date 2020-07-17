@@ -43,7 +43,7 @@ d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https:
 
 function changeElementColor(d3Element){
         d3Element
-        .transition().duration(1000)
+        .transition().duration(0)
           .attr("opacity", 1)
     }
 
