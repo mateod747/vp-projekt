@@ -28,14 +28,14 @@ d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https:
      .attr("fill", "#FF0000")
      .attr("opacity", .6)
      .on("mouseover", function(d) {
-        d3.select(this).attr({
+        d3.select(this).transition().duration(1000).attr({
           opacity: 1,
           cursor: "pointer"
         }),
         mouseover(data.inner[d.properties.place]);
        })
      .on("mouseout", function(d) {
-          d3.select(this).attr({
+          d3.select(this).transition().duration(1000).attr({
               opacity: .6, 
             });   
         mouseout(data.inner[d.properties.place]);
