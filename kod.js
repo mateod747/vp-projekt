@@ -39,7 +39,13 @@ d3.json("ne_50m_admin_0_countries_simplified.json", function(json) {    //https:
               opacity: .6, 
             });   
         mouseout(data.inner[d.properties.place]);
-       })  
+       })
+     
+     d3.selectAll("path").data(json.features)
+       .filter(function(D) {
+         return D.properties.node;
+       })
+       .transition().duration(300).attr("fill", "#808080")  
 
 var data = [["Spain", ["Paella", "Real Madrid C.F.", "FC Barcelona", "Madrid", "Pablo Picasso"]], 
             ["UK", ["Fish and Chips", "Liverpool F.C.", "Man Utd F.C.", "London", "Da Queen"]],
